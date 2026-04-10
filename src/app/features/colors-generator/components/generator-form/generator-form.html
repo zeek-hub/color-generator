@@ -1,0 +1,33 @@
+<div class="position-relative w-100 h-100 d-flex justify-content-center align-items-center">
+  <h1 class="m-3 z-0">Make your color</h1>
+  <form class="d-flex flex-column z-1 w-50" [style.border]="'1px solid ' + getColor().HEX" [formGroup]="colorForm">
+      <div class="d-flex">
+        <label [style.color]="'#ff0000'">🔴 Red -></label>
+        <p class="input-color input-red">{{ getColor().RGBA.r }}</p>
+      </div>
+    <input type="range" class="form-range red" min="0" max="255" formControlName="r">
+      <div class="d-flex">
+       <label [style.color]="'#00ff00'">🟢 Green -></label>
+        <p class="input-color input-green">{{ getColor().RGBA.g }}</p>
+      </div>
+    <input type="range" class="form-range green" min="0" max="255" formControlName="g">
+      <div class="d-flex">
+        <label [style.color]="'#0000ff'">🔵 Blue -></label>
+        <p class="input-color input-blue">{{ getColor().RGBA.b }}</p>
+      </div>
+    <input type="range" class="form-range blue" min="0" max="255" formControlName="b">
+      <div class="d-flex">
+        <label [style.color]="'#7b00ff'">🟣 Alpha -></label>
+        <p class="input-color input-alpha">{{ getColor().RGBA.a }}</p>
+      </div>
+    <input type="range" class="form-range alpha" min="0" max="255" formControlName="a">
+    <div class="d-flex justify-content-end">
+      <button class="button m-3 p-2 w-25 align-self-end" (click)="onSubmit()">
+        <span>Submit</span>
+      </button>
+      <button class="button m-3 p-2 w-25 align-self-end" (click)="generateColor()">
+        <span>Generate</span>
+      </button>
+    </div>
+  </form>
+</div>

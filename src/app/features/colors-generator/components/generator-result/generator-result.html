@@ -1,0 +1,18 @@
+<div class="vh-100 vw-100 d-flex flex-column justify-content-center align-items-center position-relative">
+  <div class="container d-flex justify-content-between z-1" [style.border]="'1px solid ' + _color.HEX" (click)="copyRGBAToClipboard()">
+    <p>RGBA</p>
+    <div class="d-flex flex-column">
+      <span>{{_color.RGBA.fullColor}}</span>
+      <sub class="fst-italic align-self-end" *ngIf="RGBACopied">copied!!!</sub>
+    </div>
+  </div>
+  <div class="container d-flex justify-content-between z-1" [style.border]="'1px solid ' + _color.HEX" (click)="copyHEXToClipboard()">
+    <p>HEX</p>
+    <div class="d-flex flex-column">
+      <span>{{_color.HEX}}</span>
+      <sub class="fst-italic align-self-end" *ngIf="HEXCopied">copied!!!</sub>
+    </div>
+  </div>
+  <canvas #previewBoxCanvas class="position-absolute z-0"></canvas>
+  <h1 class="position-absolute z-0 top-0">PREVIEW</h1>
+</div>

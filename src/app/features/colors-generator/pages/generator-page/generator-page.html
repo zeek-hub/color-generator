@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+  <div class="background">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+    <div class="blob blob10"></div>
+    <div class="blob blob6" [style.background]="color.HEX"></div>
+    <div class="blob blob7" [style.background]="color.HEX"></div>
+    <div class="blob blob8" [style.background]="color.HEX"></div>
+    <div class="blob blob9" [style.background]="color.HEX"></div>
+    <div class="blob blob11" [style.background]="color.HEX"></div>
+    <div class="blob blob12" [style.background]="color.HEX"></div>
+  </div>
+  <div class="main text-white d-flex flex-column align-items-center">
+    <nav class="position-fixed d-flex justify-content-center p-3 top-0 end-0">
+      <div class="d-flex justify-content-around align-items-center">
+        <a class="nav-link" (click)="scroll('home-section')">Home</a>
+        <a class="nav-link" (click)="scroll('form-section')">Generator</a>
+        <a class="nav-link" (click)="scroll('result-section')">Your color</a>
+      </div>
+    </nav>
+    <header class="vh-100 d-flex align-items-center justify-content-center" id="home-section">
+      <h1>Welcome to color generator!!!</h1>
+    </header>
+    <main class="vh-100 d-flex align-items-center justify-content-center" id="form-section">
+      <app-generator-form class="vw-100 vh-100" (color)="onColor($event)"/>
+    </main>
+    <footer class="vh-100 d-flex align-items-center justify-content-center" id="result-section">
+      <app-generator-result [color]="color"/>
+    </footer>
+  </div>
+</div>

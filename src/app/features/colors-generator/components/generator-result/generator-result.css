@@ -1,0 +1,30 @@
+.container{
+  cursor: pointer;
+  width: 50%;
+  padding: 16px;
+  border-radius: 24px;
+  border: 1px solid #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 8px;
+  transition: all .2s ease-in-out;
+  backdrop-filter: blur(2px);
+}
+p{
+  font-weight: bold;
+  font-size: 20px;
+}
+.container:hover{
+  transform: scale(1.04) translateY(-4px);
+  filter: drop-shadow(0px 5px 15px rgba(255, 255, 255, 0.4));
+}
+.container:active{
+  transform: scale(.95);
+}
+h1{
+  font-size: 90px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  transition: .2s ease-in-out;
+  animation: load-title .4s linear;
+}

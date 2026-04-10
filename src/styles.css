@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Deltha";
+  src: url("assets/fonts/Deltha/Deltha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+  font-family: Deltha;
+
+}
+html, body{
+  overflow-x: hidden;
+  background: #000000;
+  background-image: radial-gradient(circle, rgba(198, 198, 198, 0.18) 40%, transparent 41%);
+  background-size: 3px 3px;
+}
+body::-webkit-scrollbar {
+  background: #000000;
+  filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.2));
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  transition: all .2s ease-in-out;
+  background: white;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-image:
+    linear-gradient(45deg, transparent 48%, #c6c6c6 48%, #ddd 52%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, #c6c6c6 48%, #ddd 52%, transparent 52%);
+  background-size: 10px 10px;
+}
+body::-webkit-scrollbar-thumb:active {}
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 255, 51, 0.06);
+}

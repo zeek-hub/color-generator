@@ -1,0 +1,78 @@
+h1{
+  letter-spacing: 8px;
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  font-size: 7vw;
+  top: 37%;
+  transition: .2s ease-in-out;
+  animation: load-title .4s linear;
+}
+label{
+  font-size: 18px;
+  font-weight: bold;
+}
+.red::-webkit-slider-runnable-track{
+  background: #ff0000;
+}
+.green::-webkit-slider-runnable-track{
+  background: #00ff00;
+}
+.blue::-webkit-slider-runnable-track{
+  background: #0000ff;
+}
+.alpha::-webkit-slider-runnable-track{
+  background: #7b00ff;
+}
+.form-range::-webkit-slider-thumb{
+  background: white;
+  border: 1px solid #7a7a7a;
+}
+form{
+  border: 1px solid #7a7a7a;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.11);
+}
+.button{
+  cursor: pointer;
+  margin: 8px;
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.21);
+  transition: all .2s ease-in-out;
+  padding: 8px;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+}
+.button:hover{
+  color: black;
+  transform: scale(1.05) translateY(-4px);
+  border: solid 1px rgba(255, 255, 255, 0.63);
+  background: white;
+  background-image:
+    linear-gradient(45deg, transparent 48%, #b5b5b5 48%, #b5b5b5 52%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, #b5b5b5 48%, #b5b5b5 52%, transparent 52%);
+  background-size: 10px 10px;
+}
+.button:active{
+  transform: scale(.9);
+}
+.input-color{
+  margin: 0;
+  text-align: center;
+  background: transparent;
+  border: 1px solid transparent;
+}
+.input-red{
+  color: #ff0000;
+}
+.input-green{
+  color: #00ff00;
+ }
+.input-blue{
+  color: #0000ff;
+}
+.input-alpha{
+  color: #7b00ff;
+}
