@@ -4,6 +4,7 @@ import {Component, AfterViewInit, ElementRef} from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ColorModel} from '../../models/ColorModel.model';
+import {NgOptimizedImage} from '@angular/common';
 
 gsap.registerPlugin(ScrollTrigger);
 @Component({

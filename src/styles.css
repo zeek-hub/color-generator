@@ -34,3 +34,14 @@ body::-webkit-scrollbar-thumb:active {}
 body::-webkit-scrollbar-track {
   background-color: rgba(0, 255, 51, 0.06);
 }
+@keyframes load-item {
+  from{
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+
+  }
+}

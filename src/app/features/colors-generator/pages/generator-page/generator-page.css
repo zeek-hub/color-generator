@@ -37,7 +37,7 @@ nav{
   position: relative;
   z-index: 99;
   transition: .2s ease-in-out;
-  animation: load-nav .4s linear;
+  animation: load-item .4s linear;
   overflow: hidden;
 }
 .blob {
@@ -117,17 +117,6 @@ nav{
 .blob12 {
   top: 285%;
   left: 52%;
-}
-@keyframes load-nav {
-  from{
-    transform: translateY(-40px);
-    opacity: 0;
-  }
-  to{
-    transform: translateY(0);
-    opacity: 1;
-
-  }
 }
 @keyframes load-title {
   0%{

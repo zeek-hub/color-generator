@@ -23,8 +23,10 @@ p{
 h1{
   font-size: 90px;
   font-weight: bold;
-  color: white;
+  letter-spacing: 40px;
+  background: -webkit-linear-gradient(135deg , rgb(0, 228, 209), rgb(191, 63, 255), rgb(255, 213, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 8px;
-  transition: .2s ease-in-out;
-  animation: load-title .4s linear;
+  top: 0;
 }
