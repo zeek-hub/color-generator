@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
   imports: [
     GeneratorForm,
     GeneratorResult,
+    NgOptimizedImage,
   ],
   templateUrl: './generator-page.html',
   styleUrl: './generator-page.css',
@@ -19,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class GeneratorPage implements AfterViewInit {
   private blobs!: ElementRef[];
   private navLinks!: ElementRef[];
+  private colorWheel!: ElementRef;
   public color: ColorModel = {
     RGBA: {
       r: 100,
@@ -33,7 +35,8 @@ export class GeneratorPage implements AfterViewInit {
   scroll(id: string) {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
+      block: 'start',
+
     });
   }
   ngAfterViewInit(): void {
@@ -43,6 +46,7 @@ export class GeneratorPage implements AfterViewInit {
     this.navLinks = Array.from(
       this.el.nativeElement.querySelectorAll('.nav-link')
     )
+    this.colorWheel = this.el.nativeElement.querySelectorAll('.color-wheel')
     this.blobs.forEach((blob: any, i) => {
       gsap.to(blob, {
         x: (Math.random() - 0.5) * 300,
@@ -79,6 +83,18 @@ export class GeneratorPage implements AfterViewInit {
         link.animate(clickAnimation, clickTiming);
       })
     });
+    gsap.to(this.colorWheel, {
+      y: 920,
+      rotate: 59,
+      opacity: 1,
+      filter: 'blur(1px)',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'center center',
+        scrub: true,
+      }
+    })
   }
   public onColor(event: ColorModel){
     this.color = event;

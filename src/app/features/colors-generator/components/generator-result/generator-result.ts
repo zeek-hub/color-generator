@@ -52,7 +52,8 @@ export class GeneratorResult implements  AfterViewInit {
     this.material = new MeshBasicMaterial({
       color: this._color.HEX.slice(0, 7),
       transparent: true,
-      opacity: 0.5
+      opacity: 0.5,
+      wireframe: true,
     });
     const mesh = new Mesh(geometry, this.material);
     scene.add(mesh);
@@ -66,7 +67,7 @@ export class GeneratorResult implements  AfterViewInit {
     renderer.setSize(sizes.width, sizes.height);
 
     const tick = () => {
-      mesh.rotation.y += 0.0015;
+      mesh.rotation.y += 0.0002;
       if(mesh.rotation.y > 360){
         mesh.rotation.y -= 360;
       }

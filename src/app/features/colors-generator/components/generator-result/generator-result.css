@@ -20,13 +20,15 @@ p{
 .container:active{
   transform: scale(.95);
 }
-h1{
-  font-size: 90px;
+.title-result{
+  text-shadow: 2px 2px #000;
+  letter-spacing: 8px;
+  position: absolute;
   font-weight: bold;
-  letter-spacing: 40px;
-  background: -webkit-linear-gradient(135deg , rgb(0, 228, 209), rgb(191, 63, 255), rgb(255, 213, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
   padding: 8px;
-  top: 0;
+  font-size: 7vw;
+  transition: .2s ease-in-out;
+  animation: load-title .4s linear;
+  top: 5%;
 }

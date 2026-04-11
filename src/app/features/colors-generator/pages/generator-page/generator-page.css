@@ -11,7 +11,7 @@
   background: rgba(255, 255, 255, 0.21);
   border: solid 1px rgba(255, 255, 255, 0.63);
 }
-h1{
+.title-welcome{
   font-size: 4vw;
   font-weight: bold;
   background: -webkit-linear-gradient(135deg , rgb(0, 228, 209), rgb(191, 63, 255), rgb(255, 213, 0));
@@ -20,6 +20,14 @@ h1{
   padding: 8px;
   transition: .2s ease-in-out;
   animation: load-title 1.5s linear;
+}
+.color-wheel{
+  width: 35%;
+  filter: blur(100px);
+  opacity: 0.5;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 body {
   background: #222;

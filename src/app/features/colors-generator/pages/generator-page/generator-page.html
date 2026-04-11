@@ -22,9 +22,10 @@
       </div>
     </nav>
     <header class="vh-100 d-flex align-items-center justify-content-center" id="home-section">
-      <h1>Welcome to color generator!!!</h1>
+      <h1 class="title-welcome z-2">Welcome to color generator!!!</h1>
+      <img class="color-wheel position-absolute" src="assets/pictures/color-wheel.png" alt="color-wheel">
     </header>
-    <main class="vh-100 d-flex align-items-center justify-content-center" id="form-section">
+    <main class="vh-100 position-relative d-flex align-items-center justify-content-center" id="form-section">
       <app-generator-form class="vw-100 vh-100" (color)="onColor($event)"/>
     </main>
     <footer class="vh-100 d-flex align-items-center justify-content-center" id="result-section">
