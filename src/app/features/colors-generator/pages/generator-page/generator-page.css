@@ -22,7 +22,7 @@
   animation: load-title 1.5s linear;
 }
 .color-wheel{
-  width: 35%;
+  width: 85vh;
   filter: blur(100px);
   opacity: 0.5;
   transform: translateZ(0);

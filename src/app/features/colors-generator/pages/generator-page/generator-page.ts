@@ -84,7 +84,7 @@ export class GeneratorPage implements AfterViewInit {
       })
     });
     gsap.to(this.colorWheel, {
-      y: 920,
+      y: '100vh',
       rotate: 59,
       opacity: 1,
       filter: 'blur(1px)',
