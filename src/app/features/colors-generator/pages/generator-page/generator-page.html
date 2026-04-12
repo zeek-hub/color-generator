@@ -21,11 +21,34 @@
         <a class="nav-link" (click)="scroll('result-section')">Your color</a>
       </div>
     </nav>
-    <header class="vh-100 d-flex align-items-center justify-content-center" id="home-section">
-      <h1 class="title-welcome z-2">Welcome to color generator!!!</h1>
+    <header class="vh-100 d-flex justify-content-center align-items-center" id="home-section">
       <img class="color-wheel position-absolute" src="assets/pictures/color-wheel.png" alt="color-wheel">
+        <h1 class="title-welcome position-absolute">Welcome to color generator!!!</h1>
+      <section class="vw-100 select-color-container position-absolute text-white d-flex flex-column align-items-center z-1">
+        <h1 class="title-color align-self-start">
+          You can select...
+        </h1>
+        <div class="card" id="card" (click)="selectColor(currentColor)" [class.flip]="isFlipped">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="color-container" [style.background]="currentColor.HEX"></div>
+              <p>RGBA: {{ currentColor.RGBA.fullColor }}</p>
+              <p>HEX: {{ currentColor.HEX }}</p>
+            </div>
+            <div class="card-back">
+              <div class="color-container" [style.background]="currentColor.HEX"></div>
+              <p>RGBA: {{ currentColor.RGBA.fullColor }}</p>
+              <p>HEX: {{ currentColor.HEX }}</p>
+            </div>
+          </div>
+        </div>
+        <button class="button m-3" (click)="toggle()">NEXT</button>
+      </section>
     </header>
     <main class="vh-100 position-relative d-flex align-items-center justify-content-center" id="form-section">
+      <h1 class="title-color position-absolute">
+        ...or make your own
+      </h1>
       <app-generator-form class="vw-100 vh-100" (color)="onColor($event)"/>
     </main>
     <footer class="vh-100 d-flex align-items-center justify-content-center" id="result-section">

@@ -27,7 +27,6 @@ import {
 })
 export class GeneratorResult implements  AfterViewInit {
   @ViewChild('previewBoxCanvas', { static: false }) previewBoxCanvas!: ElementRef;
-  public _color!: ColorModel;
   @Input() set color(color: ColorModel) {
     this._color = color;
     if(this.material){
@@ -37,10 +36,14 @@ export class GeneratorResult implements  AfterViewInit {
       this.material.color.set(this._color.HEX.slice(0, 7));
     }
   }
+  public _color!: ColorModel;
   private material!: MeshBasicMaterial;
+
   public RGBACopied: boolean = false;
   public HEXCopied: boolean = false;
+
   constructor(private cdf: ChangeDetectorRef) {}
+
   ngAfterViewInit() {
     const canvas = this.previewBoxCanvas.nativeElement;
     const sizes = {
@@ -77,6 +80,7 @@ export class GeneratorResult implements  AfterViewInit {
 
     tick();
   }
+
   copyRGBAToClipboard(){
     navigator.clipboard.writeText(this._color.RGBA.fullColor);
     this.RGBACopied = true;

@@ -1,10 +1,9 @@
 import {GeneratorForm} from '../../components/generator-form/generator-form';
 import {GeneratorResult} from '../../components/generator-result/generator-result';
-import {Component, AfterViewInit, ElementRef} from '@angular/core';
+import {Component, AfterViewInit, ElementRef, OnInit, ChangeDetectorRef, SimpleChanges} from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ColorModel} from '../../models/ColorModel.model';
-import {NgOptimizedImage} from '@angular/common';
 
 gsap.registerPlugin(ScrollTrigger);
 @Component({
@@ -12,12 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
   imports: [
     GeneratorForm,
     GeneratorResult,
-    NgOptimizedImage,
   ],
   templateUrl: './generator-page.html',
   styleUrl: './generator-page.css',
 })
-export class GeneratorPage implements AfterViewInit {
+export class GeneratorPage implements AfterViewInit, OnInit {
   private blobs!: ElementRef[];
   private navLinks!: ElementRef[];
   private colorWheel!: ElementRef;
@@ -31,7 +29,11 @@ export class GeneratorPage implements AfterViewInit {
     },
     HEX: '#646464FF'
   };
-  constructor(private el: ElementRef) {}
+  public currentColor!: ColorModel;
+  public isFlipped = false;
+
+  constructor(private el: ElementRef, private  cdf:ChangeDetectorRef) {}
+
   scroll(id: string) {
     document.getElementById(id)?.scrollIntoView({
       behavior: 'smooth',
@@ -39,14 +41,42 @@ export class GeneratorPage implements AfterViewInit {
 
     });
   }
+
   ngAfterViewInit(): void {
+    this.initNativeElements();
+    this.initBlobsAnimation();
+    this.initNavLinksAnimation();
+    this.initScrollColorWheelAnimation();
+  }
+  ngOnInit() {
+    this.currentColor = GeneratorForm.prototype.getRandomColor();
+  }
+
+  onColor(event: ColorModel){
+    this.selectColor(event);
+  }
+  selectColor(event: ColorModel){
+    this.color = event;
+    this.scroll('result-section');
+  }
+  toggle() {
+    this.isFlipped = !this.isFlipped;
+    setTimeout(() => {
+      this.currentColor = GeneratorForm.prototype.getRandomColor();
+      this.cdf.detectChanges();
+    }, 235)
+  }
+
+  protected initNativeElements(){
     this.blobs = Array.from(
       this.el.nativeElement.querySelectorAll('.blob')
     );
     this.navLinks = Array.from(
       this.el.nativeElement.querySelectorAll('.nav-link')
-    )
-    this.colorWheel = this.el.nativeElement.querySelectorAll('.color-wheel')
+    );
+    this.colorWheel = this.el.nativeElement.querySelectorAll('.color-wheel');
+  }
+  protected initBlobsAnimation(){
     this.blobs.forEach((blob: any, i) => {
       gsap.to(blob, {
         x: (Math.random() - 0.5) * 300,
@@ -57,6 +87,7 @@ export class GeneratorPage implements AfterViewInit {
         ease: "sine.inOut"
       });
     });
+
     window.addEventListener('mousemove', (e) => {
       const max = 80;
       const x = (e.clientX / window.innerWidth - 0.5) * 2 * max;
@@ -68,6 +99,8 @@ export class GeneratorPage implements AfterViewInit {
         ease: "power2.out"
       });
     });
+  }
+  protected initNavLinksAnimation(){
     this.navLinks.forEach((link: any) => {
       link.addEventListener('click', () => {
         const clickAnimation = [
@@ -83,11 +116,13 @@ export class GeneratorPage implements AfterViewInit {
         link.animate(clickAnimation, clickTiming);
       })
     });
+  }
+  protected initScrollColorWheelAnimation(){
     gsap.to(this.colorWheel, {
       y: '100vh',
       rotate: 59,
       opacity: 1,
-      filter: 'blur(1px)',
+      filter: 'blur(0px)',
       scrollTrigger: {
         trigger: document.body,
         start: 'top top',
@@ -95,9 +130,5 @@ export class GeneratorPage implements AfterViewInit {
         scrub: true,
       }
     })
-  }
-  public onColor(event: ColorModel){
-    this.color = event;
-    this.scroll('result-section');
   }
 }

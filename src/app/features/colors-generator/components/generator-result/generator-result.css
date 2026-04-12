@@ -1,3 +1,6 @@
+*{
+  overflow: hidden;
+}
 .container{
   cursor: pointer;
   width: 50%;
