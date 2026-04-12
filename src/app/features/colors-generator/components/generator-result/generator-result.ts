@@ -87,7 +87,7 @@ export class GeneratorResult implements  AfterViewInit {
     setTimeout(() =>{
       this.RGBACopied = false;
       this.cdf.detectChanges();
-    }, 500)
+    }, 1000)
   }
   copyHEXToClipboard(){
     navigator.clipboard.writeText(this._color.HEX);
@@ -95,6 +95,6 @@ export class GeneratorResult implements  AfterViewInit {
     setTimeout(() => {
       this.HEXCopied = false;
       this.cdf.detectChanges();
-    }, 1500)
+    }, 1000)
   }
 }

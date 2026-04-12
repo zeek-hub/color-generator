@@ -24,14 +24,18 @@ p{
   transform: scale(.95);
 }
 .title-result{
-  text-shadow: 2px 2px #000;
   letter-spacing: 8px;
   position: absolute;
   font-weight: bold;
-  color: white;
+  background: -webkit-linear-gradient(135deg , rgb(0, 228, 209), rgb(191, 63, 255), rgb(255, 213, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 8px;
   font-size: 7vw;
   transition: .2s ease-in-out;
   animation: load-title .4s linear;
   top: 4vh;
+}
+.copied-text{
+  font-size: 1vh;
 }

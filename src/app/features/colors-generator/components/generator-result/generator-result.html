@@ -3,14 +3,14 @@
     <p>RGBA</p>
     <div class="d-flex flex-column">
       <span>{{_color.RGBA.fullColor}}</span>
-      <sub class="fst-italic align-self-end" *ngIf="RGBACopied">copied!!!</sub>
+      <p class="copied-text fst-italic fw-normal align-self-end p-1" *ngIf="RGBACopied">copied!!!</p>
     </div>
   </div>
   <div class="container d-flex justify-content-between z-1" [style.border]="'1px solid ' + _color.HEX" (click)="copyHEXToClipboard()">
     <p>HEX</p>
     <div class="d-flex flex-column">
       <span>{{_color.HEX}}</span>
-      <sub class="fst-italic align-self-end" *ngIf="HEXCopied">copied!!!</sub>
+      <p class="copied-text fst-italic fw-normal align-self-end p-1" *ngIf="HEXCopied">copied!!!</p>
     </div>
   </div>
   <canvas #previewBoxCanvas class="position-absolute z-0"></canvas>

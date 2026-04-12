@@ -64,7 +64,7 @@ export class GeneratorPage implements AfterViewInit, OnInit {
     setTimeout(() => {
       this.currentColor = GeneratorForm.prototype.getRandomColor();
       this.cdf.detectChanges();
-    }, 235)
+    }, 300)
   }
 
   protected initNativeElements(){
