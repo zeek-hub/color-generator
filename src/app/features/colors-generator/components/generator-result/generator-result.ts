@@ -144,6 +144,7 @@ export class GeneratorResult implements  AfterViewInit {
     let fifthTween;
     let sixthTween;
     let seventhTween;
+    let eightTween;
 
     charAnimations.forEach((cfg, idx) => {
       const tween = tl.fromTo(
@@ -168,6 +169,7 @@ export class GeneratorResult implements  AfterViewInit {
       if (idx === 4) fifthTween = tween;
       if (idx === 5) sixthTween = tween;
       if (idx === 6) seventhTween = tween;
+      if (idx === 7) eightTween = tween;
     });
   //STAR
     tl.to(this.starEl.nativeElement, {
@@ -210,5 +212,15 @@ export class GeneratorResult implements  AfterViewInit {
       duration: 1,
       ease: "power2.out"
     }, seventhTween!.startTime() + 3);
+  //R LETTER
+    tl.to(splitText.chars[8], {
+        rotateY: +180,
+        duration: 1.5,
+        repeat: -1,
+        repeatDelay: 2,
+        ease: "bounce",
+        yoyo: true
+    },
+      eightTween!.startTime() + 3);
   }
 }
