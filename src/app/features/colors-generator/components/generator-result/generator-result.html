@@ -3,7 +3,7 @@
     <p>RGBA</p>
     <div class="d-flex flex-column">
       <span>{{_color.RGBA.fullColor}}</span>
-      <p class="copied-text fst-italic fw-normal align-self-end p-1" *ngIf="RGBACopied">copied!!!</p>
+      <p class="copied-text   fst-italic fw-normal align-self-end p-1" *ngIf="RGBACopied">copied!!!</p>
     </div>
   </div>
   <div class="container d-flex justify-content-between z-1" [style.border]="'1px solid ' + _color.HEX" (click)="copyHEXToClipboard()">
@@ -14,5 +14,37 @@
     </div>
   </div>
   <canvas #previewBoxCanvas class="position-absolute z-0"></canvas>
-  <h1 class="title-result position-absolute z-0">MAKE YOUR COLOR</h1>
+  <div class="text-container vw-100 vh-100 position-absolute">
+      <p #text class="text position-absolute z-1">YOUR COLOR</p>
+      <svg #star class="star position-absolute z-0" width="160" height="160" viewBox="0 0 120 120">
+        <g transform="translate(60,60)">
+          <rect x="-5" y="-2vw" width="10" height="4vw" rx="5"
+                fill="url(#grad)" transform="rotate(0)" />
+          <rect x="-5" y="-2vw" width="10" height="4vw" rx="5"
+                fill="url(#grad)" transform="rotate(45)" />
+          <rect x="-5" y="-2vw" width="10" height="4vw" rx="5"
+                fill="url(#grad)" transform="rotate(90)" />
+          <rect x="-5" y="-2vw" width="10" height="4vw" rx="5"
+                fill="url(#grad)" transform="rotate(135)" />
+        </g>
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ffd6c9"/>
+            <stop offset="100%" stop-color="#ff7a3c"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg #box class="box position-absolute z-0">
+        <g transform="translate(60,60)">
+          <rect x="-5" y="-50" width="50" height="50" rx="5" [style.rotate]="'45deg'"
+                fill="url(#grad2)" transform="rotate(0)" />
+        </g>
+        <defs>
+          <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c9ffdc"/>
+            <stop offset="100%" stop-color="#3cff6a"/>
+          </linearGradient>
+        </defs>
+      </svg>
+  </div>
 </div>

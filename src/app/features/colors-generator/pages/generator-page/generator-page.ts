@@ -1,6 +1,6 @@
 import {GeneratorForm} from '../../components/generator-form/generator-form';
 import {GeneratorResult} from '../../components/generator-result/generator-result';
-import {Component, AfterViewInit, ElementRef, OnInit, ChangeDetectorRef, SimpleChanges} from '@angular/core';
+import {Component, AfterViewInit, ElementRef, OnInit, ChangeDetectorRef} from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {ColorModel} from '../../models/ColorModel.model';

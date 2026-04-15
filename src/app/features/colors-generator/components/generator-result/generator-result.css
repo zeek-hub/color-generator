@@ -23,19 +23,28 @@ p{
 .container:active{
   transform: scale(.95);
 }
-.title-result{
-  letter-spacing: 8px;
-  position: absolute;
-  font-weight: bold;
-  background: -webkit-linear-gradient(135deg , rgb(0, 228, 209), rgb(191, 63, 255), rgb(255, 213, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: 8px;
-  font-size: 7vw;
-  transition: .2s ease-in-out;
-  animation: load-title .4s linear;
-  top: 4vh;
-}
 .copied-text{
   font-size: 1vh;
+}
+.text{
+  font-size: 8vw;
+  font-weight: bold;
+}
+.char{
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+.star{
+  top: 11%;
+  left: 9.4%;
+  width: clamp(80px, 12vw, 160px);
+  height: auto;
+}
+.text-container{
+  padding: 7vh;
+}
+.box{
+  opacity: 0;
+  top: 14%;
+  left: 48%;
 }
