@@ -35,7 +35,7 @@ p{
   will-change: transform, opacity;
 }
 .star{
-  top: 11%;
+  top: 5vw;
   left: 9.4%;
   width: clamp(80px, 12vw, 160px);
   height: auto;
@@ -45,6 +45,6 @@ p{
 }
 .box{
   opacity: 0;
-  top: 14%;
-  left: 48%;
+  top: 7vw;
+  left: 48vw;
 }

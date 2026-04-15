@@ -171,13 +171,13 @@ export class GeneratorResult implements  AfterViewInit {
     });
   //STAR
     tl.to(this.starEl.nativeElement, {
-      x: '8vw',
+      x: '9vw',
       rotate: 360,
       duration: 1,
       ease: "power2.out"
     }, secondTween!.startTime() + 0.5);
     tl.to(this.starEl.nativeElement, {
-      y: '-12vh',
+      y: '-6vw',
       duration: 1,
       ease: "power2.out"
     }, thirdTween!.startTime() + 1.3);
